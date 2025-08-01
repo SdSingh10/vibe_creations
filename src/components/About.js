@@ -1,10 +1,19 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 // Place a professional headshot in `src/assets`
 import profilePic from '../assets/guriqbal_singh_1.jpg';
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-gray-50">
+    <motion.section 
+      id="about" 
+      className="py-20 bg-white"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8 }}
+    >
+    {/* <section id="about" className="py-20 bg-gray-50"> */}
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-bold text-center text-gray-800 font-serif mb-12">About Me</h2><br></br>
         <div className="flex flex-col md:flex-row items-center gap-12">
@@ -39,7 +48,8 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
+    {/* </section> */}
+    </motion.section>
   );
 };
 
